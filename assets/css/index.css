@@ -1,0 +1,263 @@
+@import url("./reset.css");
+
+.container {
+    width: min(100% - 30px, 1080px);
+    margin-inline: auto;
+}
+
+main {
+    overflow: hidden;
+}
+
+a {
+    text-decoration: none;
+}
+
+body {
+    background-color: #fff;
+}
+
+/*-----------------------------------------*/
+/* Header                             */
+/*-----------------------------------------*/
+
+header {
+    color: #000;
+    scroll-behavior: smooth;
+}
+
+header .flex {
+    display: flex;
+    height: 61px;
+}
+
+.title {
+    flex-grow: 1;
+}
+
+.title h1 a {
+    font-size: 28px;
+    font-weight: 900;
+    letter-spacing: 0.2px;
+    line-height: 61px;
+    font-family: 'Leckerli One', cursive;
+    color: #000;
+}
+
+.name-red {
+    display: inline;
+    color: #C60608;
+}
+
+nav {
+    flex-grow: 4;
+}
+
+nav ul {
+    list-style: none;
+    font-size: 0;
+    text-align: right;
+    height: 61px;
+}
+
+nav ul li {
+    display: inline;
+    line-height: 61px;
+}
+
+nav ul li a {
+    font-size: 20px;
+    font-weight: 500;
+    color: #000;
+}
+
+nav ul li + li {
+    margin-left: 60px;
+}
+
+.head-button {
+    background-color: #C60608;
+    padding: 8px 20px;
+    border-radius: 10px;
+    color: #fff;
+    cursor: pointer;
+}
+
+/*-----------------------------------------*/
+/* Hero-banner                         */
+/*-----------------------------------------*/
+
+.hero-banner {
+    background-color: #EDEAEB;
+    height: calc(100vh - 61px);
+    text-align: center;
+    overflow: hidden;
+    
+    color: #000;
+    display: grid;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    justify-items: center;
+    /* grid-template-rows: 100px 150px 50px; */
+    grid-template-columns: 800px;
+    gap: 20px;
+}
+
+.bounce {
+    font-size: 85px;
+    font-weight: 900;
+}
+
+span {
+    color: #C60608;
+}
+
+.banner-text {
+    font-size: 30px;
+}
+
+.banner-button {
+    padding: 10px 30px;
+    border-radius: 15px;
+    background-color: #C60608;;
+    color: #fff;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+/*-----------------------------------------*/
+/* Main                           */
+/*-----------------------------------------*/
+
+main {
+    display: grid;
+    font-size: 0;
+}
+
+main h3 {
+    font-size: 30px;
+    text-align: center;
+    padding: 30px 0;
+    color: #26534D;
+}
+
+.about-me {
+    display: flex;
+    height: 600px;
+    padding: 100px 0;
+}
+
+.me-img{
+    flex-grow: 1;
+    width: 50%;
+    display: grid;
+    place-items: center;
+}
+
+.me-img img {
+    display: grid;
+    place-items: center;
+    width: 300px;
+    height: 300px;
+    border-radius: 15PX;
+}
+
+.info-part{
+    flex-grow: 1;
+    width: 50%;
+    padding: 50px 120px 50px 0;
+}
+
+.info-name {
+    color: #000;
+    font-size: 55px;
+    padding: 15px;
+    font-weight: 600;
+}
+
+.info-detail{
+    color: #B5B3B3;
+    font-size: 18px;
+    padding: 15px;
+}
+
+/*-----------------------------------------*/
+/* Footer                           */
+/*-----------------------------------------*/
+
+footer {
+    height: 100px;
+    line-height: 100px;
+    font-size: 18px;
+    background-color: #EAE5E7;
+}
+
+footer .container p {
+    float: left;
+}
+
+footer .container p + p {
+    float: right;
+}
+
+footer .container p a {
+    width: 50px;
+    height: 50px;
+    display: inline-block;
+    border-radius: 50%;
+    border: 1px solid #000;
+    line-height: 50px;
+    text-align: center;
+    color: #000;;
+}
+
+
+/*
+    992x and down 
+*/
+
+@media (max-width: 992px) {
+
+    .info-name {
+        color: #000;
+        font-size: 46px;
+        padding: 15px;
+        font-weight: 600;
+    }
+
+    .info-detail {
+        color: #B5B3B3;
+        font-size: 16px;
+        padding: 15px;
+    }
+
+}
+
+/*
+    768x and down 
+*/
+
+@media (max-width: 768px) {
+
+    .about-me {
+        display: flex;
+        height: auto;
+        padding: 50px 0;
+        flex-wrap: wrap;
+    }
+
+    .me-img {
+        flex: 1 1 auto;
+        width: 100%;
+        display: grid;
+        place-items: center;
+    }
+
+    .info-part {
+        flex: 1 1 auto;
+        width: 100%;
+        padding: 20px 120px;
+    }
+
+}
