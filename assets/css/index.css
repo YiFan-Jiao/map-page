@@ -158,8 +158,8 @@ main h3 {
 .me-img img {
     display: grid;
     place-items: center;
-    width: 300px;
     height: 300px;
+    width: auto;
     border-radius: 15PX;
 }
 
@@ -181,6 +181,44 @@ main h3 {
     font-size: 18px;
     padding: 15px;
 }
+
+
+/*-----------------------------------------*/
+/* Map                           */
+/*-----------------------------------------*/
+
+.map-part {
+    display: grid;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    justify-items: center;
+    grid-template-columns: 800px;
+    gap: 20px;
+    margin-bottom: 100px;
+}
+
+.map-main{
+    width: 800px; 
+    height: 600px;
+}
+
+
+.marker {
+    background-image: url('../image/icon.jpg');
+    background-size: cover;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    }
+    .mapboxgl-popup {
+    max-width: 200px;
+    }
+    .mapboxgl-popup-content {
+    text-align: center;
+    font-family: 'Open Sans', sans-serif;
+    }
 
 /*-----------------------------------------*/
 /* Footer                           */

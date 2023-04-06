@@ -25,6 +25,19 @@
             href="./assets/image/icon.jpg?v=2" 
             type="image/x-icon"
         >
+        <script src='https://api.mapbox.com/mapbox-gl-js/v2.9.1/mapbox-gl.js'></script>
+        <link href='https://api.mapbox.com/mapbox-gl-js/v2.9.1/mapbox-gl.css' rel='stylesheet' />
+
+        <link
+href="https://fonts.googleapis.com/css?family=Open+Sans"
+rel="stylesheet"
+/>
+<script src="https://api.tiles.mapbox.com/mapbox-gl-js/v2.13.0/mapbox-gl.js"></script>
+<link
+href="https://api.tiles.mapbox.com/mapbox-gl-js/v2.13.0/mapbox-gl.css"
+rel="stylesheet"
+/>
+
         <link rel="stylesheet" href="./assets/css/index.css">
         <script src="assets/js/index.js" defer></script>
     </head>
@@ -72,7 +85,7 @@
             </div>
             <div class="container about-me" id="about-me">
                 <div class="me-img">
-                    <img src="./assets/image/my-img.jpg" alt="">
+                    <img src="./assets/image/my-img.jpeg" alt="">
                 </div>
                 <div class="info-part">
                     <div class="info-name">
@@ -87,7 +100,63 @@
                 </div>
             </div>
             <div class="map-part">
-                
+                <div id='map' class="map-main"></div>
+                <script>
+                    mapboxgl.accessToken = 'pk.eyJ1Ijoiamlhby15aWZhbiIsImEiOiJjbGc1bTh4bjUwNGx0M2dxcmU4OWdhdDR2In0.azgKcMCQ9plNlYaY7EizEg';
+                     
+                    const geojson = {
+                    'type': 'FeatureCollection',
+                    'features': [
+                    {
+                    'type': 'Feature',
+                    'geometry': {
+                    'type': 'Point',
+                    'coordinates': [-77.032, 38.913]
+                    },
+                    'properties': {
+                    'title': 'Mapbox',
+                    'description': 'Washington, D.C.'
+                    }
+                    },
+                    {
+                    'type': 'Feature',
+                    'geometry': {
+                    'type': 'Point',
+                    'coordinates': [-122.414, 37.776]
+                    },
+                    'properties': {
+                    'title': 'Mapbox',
+                    'description': 'San Francisco, California'
+                    }
+                    }
+                    ]
+                    };
+                     
+                    const map = new mapboxgl.Map({
+                    container: 'map',
+                    style: 'mapbox://styles/mapbox/light-v11',
+                    center: [-96, 37.8],
+                    zoom: 3
+                    });
+                     
+                    // add markers to map
+                    for (const feature of geojson.features) {
+                    // create a HTML element for each feature
+                    const el = document.createElement('div');
+                    el.className = 'marker';
+                     
+                    // make a marker for each feature and add it to the map
+                    new mapboxgl.Marker(el)
+                    .setLngLat(feature.geometry.coordinates)
+                    .setPopup(
+                    new mapboxgl.Popup({ offset: 25 }) // add popups
+                    .setHTML(
+                    `<h3>${feature.properties.title}</h3><p>${feature.properties.description}</p>`
+                    )
+                    )
+                    .addTo(map);
+                    }
+                    </script>       
             </div>
         </main>
         <footer>
