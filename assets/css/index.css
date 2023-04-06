@@ -170,14 +170,14 @@ main h3 {
 }
 
 .info-name {
-    color: #000;
+    color: #C60608;
     font-size: 55px;
     padding: 15px;
     font-weight: 600;
 }
 
 .info-detail{
-    color: #B5B3B3;
+    color: #000;
     font-size: 18px;
     padding: 15px;
 }
