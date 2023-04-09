@@ -203,7 +203,6 @@ main h3 {
     height: 600px;
 }
 
-
 .marker {
     background-image: url('../image/icon.jpg');
     background-size: cover;
@@ -211,14 +210,16 @@ main h3 {
     height: 50px;
     border-radius: 50%;
     cursor: pointer;
-    }
-    .mapboxgl-popup {
+}
+
+.mapboxgl-popup {
     max-width: 200px;
-    }
-    .mapboxgl-popup-content {
+}
+
+.mapboxgl-popup-content {
     text-align: center;
     font-family: 'Open Sans', sans-serif;
-    }
+}
 
 /*-----------------------------------------*/
 /* Footer                           */
